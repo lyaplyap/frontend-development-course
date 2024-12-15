@@ -1,4 +1,3 @@
-
 /**
  * Case Converter
  * 
@@ -6,5 +5,10 @@
  * @returns {String} Строка в camelCase
  */
 export const solutionFn = (snakeCaseString) => {
-    // Ваш код здесь
+    return snakeCaseString
+        .split('_')
+        .map((word, index) =>
+            index === 0 ? word.toLowerCase() : word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+        )
+        .join('');
 };
