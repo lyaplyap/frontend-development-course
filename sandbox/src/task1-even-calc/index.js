@@ -5,5 +5,6 @@
  * @returns {number} Сумма чётных чисел
  */
 export const solutionFn = (numbers) => {
-    // Ваш код здесь
+    return numbers.reduce((accumulator, currentValue) => 
+        accumulator + (currentValue % 2 === 0 ? currentValue : 0), 0);
 };

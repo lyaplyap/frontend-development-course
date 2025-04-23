@@ -7,5 +7,19 @@
  * @returns {Array} Отфильтрованный массив
  */
 export const filter = (array, filterFn, inplace = false) => {
-    // Ваш код здесь
+    const result = [];
+
+    for (let i = 0; i < array.length; i++) {
+        if (filterFn(array[i], i, array)) {
+            result.push(array[i]);
+        }
+    }
+
+    if (inplace) {
+        array.length = 0; 
+        result.forEach(item => array.push(item));
+        return array;
+    }
+
+    return result;
 };
