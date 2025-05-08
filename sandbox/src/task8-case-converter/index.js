@@ -6,5 +6,10 @@
  * @returns {String} Строка в camelCase
  */
 export const solutionFn = (snakeCaseString) => {
-    // Ваш код здесь
+    return snakeCaseString.split('_').map((word, index) => {
+        if (index === 0) {
+            return word.toLowerCase();
+        }
+        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    }).join('');
 };
